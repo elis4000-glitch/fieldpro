@@ -1,17 +1,14 @@
 {
   "name": "fieldpro",
   "version": "1.0.0",
-  "description": "FieldPro - אפליקציית סוכני שטח",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "node server/index.js"
+    "start": "node server/index.js"
   },
   "dependencies": {
     "express": "^4.18.2",
     "multer": "^1.4.5-lts.1",
     "cors": "^2.8.5",
-    "better-sqlite3": "^9.4.3",
     "xlsx": "^0.18.5"
   },
   "engines": {
