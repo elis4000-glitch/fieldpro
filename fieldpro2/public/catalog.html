@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>קטלוג מוצרים</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1D9E75;--green-dark:#0F6E56;--green-light:#E1F5EE;--border:#E5E7EB;--muted:#6B7280}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F5F5F5;color:#111;direction:rtl}
+.topbar{background:var(--green);color:#fff;padding:1rem;text-align:center}
+.topbar h1{font-size:20px;font-weight:700}
+.topbar p{font-size:13px;opacity:.8;margin-top:4px}
+.main{max-width:900px;margin:0 auto;padding:1rem}
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem;overflow-x:auto;padding-bottom:4px}
+.chip{padding:5px 12px;border-radius:20px;border:1px solid var(--border);font-size:12px;cursor:pointer;background:#fff;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.chip.active{background:var(--green);color:#fff;border-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer}
+.card-img{height:130px;position:relative;overflow:hidden;background:#F3F4F6}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:40px}
+.card-info{padding:8px 10px}
+.card-name{font-size:12px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-price{font-size:14px;font-weight:700;color:var(--green)}
+.btn{padding:8px 14px;border:none;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--green);color:#fff}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center;z-index:100}
+.modal{background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;padding:1.5rem}
+.variant-btn{border:2px solid var(--border);border-radius:8px;padding:8px 12px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:6px;background:#fff}
+.variant-btn.active{border-color:var(--green);background:var(--green-light);color:var(--green-dark)}
+.swatch{width:14px;height:14px;border-radius:3px}
+.cart-bar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);padding:.75rem 1rem;display:none;align-items:center;gap:10px;max-width:900px;margin:0 auto}
+.cart-bar.show{display:flex}
+.cart-badge{background:var(--green);color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.order-form{background:#fff;border-radius:16px;padding:1.5rem;margin-top:1rem}
+.form-input{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;margin-bottom:10px}
+.success-screen{text-align:center;padding:3rem 1rem}
+.success-screen .icon{font-size:64px;margin-bottom:1rem}
+.hidden{display:none}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;z-index:200;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1 id="top-title">קטלוג מוצרים</h1>
+  <p id="top-sub">בחר מוצרים ושלח הזמנה</p>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="main" id="catalog-view">
+  <div style="margin:.75rem 0;display:flex;gap:8px;flex-wrap:wrap">
+    <input id="srch" placeholder="חיפוש..." style="flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:13px;min-width:150px" oninput="renderGrid()">
+  </div>
+  <div class="filter-row" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<!-- Order form -->
+<div class="main hidden" id="order-view">
+  <div class="order-form">
+    <h2 style="margin-bottom:1rem">📦 סיום הזמנה</h2>
+    <div id="order-summary" style="margin-bottom:1rem"></div>
+    <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:1rem">סה"כ: ₪<span id="order-total">0</span></div>
+    <input class="form-input" id="cust-name" placeholder="שם מלא *" required>
+    <input class="form-input" id="cust-phone" placeholder="טלפון">
+    <textarea class="form-input" id="cust-notes" placeholder="הערות..." rows="3" style="resize:none"></textarea>
+    <div style="display:flex;gap:8px">
+      <button class="btn" onclick="showCatalog()" style="flex:1;background:#F3F4F6">← חזור</button>
+      <button class="btn btn-primary" onclick="submitOrder()" style="flex:2">שלח הזמנה 📤</button>
+    </div>
+  </div>
+</div>
+
+<!-- Success -->
+<div class="main hidden" id="success-view">
+  <div class="success-screen">
+    <div class="icon">✅</div>
+    <h2 style="margin-bottom:8px">ההזמנה נשלחה!</h2>
+    <p style="color:var(--muted);margin-bottom:1.5rem">תודה! קיבלנו את הזמנתך ונחזור אליך בקרוב.</p>
+    <button class="btn btn-primary" onclick="location.reload()">הזמנה חדשה</button>
+  </div>
+</div>
+
+<!-- Cart bar -->
+<div class="cart-bar" id="cart-bar">
+  <div class="cart-badge" id="cb-n">0</div>
+  <span style="font-size:13px;color:var(--muted)">פריטים</span>
+  <span style="font-size:14px;font-weight:700;color:var(--green)" id="cb-total">₪0</span>
+  <button class="btn btn-primary" style="margin-right:auto" onclick="showOrderView()">לסיום ←</button>
+</div>
+
+<!-- Product Modal -->
+<div class="modal-bg hidden" id="modal" onclick="if(event.target===this)document.getElementById('modal').classList.add('hidden')">
+  <div class="modal">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+      <h3 id="m-name" style="font-size:18px;font-weight:700"></h3>
+      <button onclick="document.getElementById('modal').classList.add('hidden')" style="background:none;border:none;font-size:20px;cursor:pointer">✕</button>
+    </div>
+    <img id="m-img" src="" alt="" style="width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:1rem;display:none">
+    <div id="m-img-ph" style="font-size:64px;text-align:center;margin-bottom:1rem"></div>
+    <div style="font-size:22px;font-weight:700;color:var(--green);margin-bottom:1rem" id="m-price"></div>
+    <div style="font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px">בחר צבע/גודל:</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem" id="m-variants"></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem">
+      <button onclick="mQty(-1)" style="width:36px;height:36px;border:1px solid var(--border);border-radius:8px;background:#fff;font-size:18px;cursor:pointer">-</button>
+      <span id="m-qty" style="font-size:16px;font-weight:600;min-width:30px;text-align:center">1</span>
+      <button onclick="mQty(1)" style="width:36px;height:36px;border:1px solid var(--border);border-radius:8px;background:#fff;font-size:18px;cursor:pointer">+</button>
+    </div>
+    <button class="btn btn-primary" style="width:100%;padding:12px;font-size:15px" onclick="addFromModal()">+ הוסף להזמנה</button>
+  </div>
+</div>
+
+<script>
+const token = location.pathname.split('/').pop();
+let PRODUCTS=[], CATEGORIES=[], cat='all', cart={}, mSku=null, mVi=0, mQtyN=1;
+
+const CM={black:'#111',blue:'#2563EB',grey:'#9CA3AF',white:'#F9FAFB',red:'#DC2626',green:'#16A34A',pink:'#EC4899',yellow:'#EAB308',bronze:'#92400E',haki:'#78716C',beige:'#E8D5B7',silver:'#C0C0C0',gold:'#F59E0B',orange:'#F97316',purple:'#7C3AED',brown:'#92400E','navi blue':'#1E3A8A','lak black':'#111','lak red':'#991B1B'};
+function cFor(s){if(!s)return'#9CA3AF';const l=s.toLowerCase();for(const[k,v]of Object.entries(CM))if(l.includes(k))return v;return'#9CA3AF';}
+const ICONS={'תיקי גברים':'👜','אופנה':'👗','ארנקים':'💳','קרינקל':'🎀','תיקי גב למחשב':'💼','ארנקי גברים עור':'🪙','מבצעים':'🏷'};
+function icon(c){return ICONS[c?.trim()]||'🛍';}
+
+async function init(){
+  const r=await fetch('/api/quicksell/'+token).then(r=>r.json()).catch(()=>null);
+  if(!r?.products){document.getElementById('catalog-view').innerHTML='<div style="text-align:center;padding:3rem;color:#6B7280">קישור לא תקין או פג תוקף</div>';return;}
+  PRODUCTS=r.products; CATEGORIES=[...new Set(r.products.map(p=>p.category).filter(Boolean))].sort();
+  if(r.agentName)document.getElementById('top-sub').textContent='קטלוג מאת '+r.agentName;
+  buildFilters(); renderGrid();
+}
+
+function buildFilters(){
+  document.getElementById('filters').innerHTML='<div class="chip active" onclick="setCat(\'all\',this)">הכל</div>'+CATEGORIES.map(c=>`<div class="chip" onclick="setCat('${c.replace(/'/g,"\\'")}',this)">${icon(c)} ${c}</div>`).join('');
+}
+
+function renderGrid(){
+  const q=document.getElementById('srch').value.toLowerCase();
+  const f=PRODUCTS.filter(p=>(cat==='all'||p.category===cat)&&(!q||p.name?.toLowerCase().includes(q)||p.sku?.toLowerCase().includes(q)));
+  document.getElementById('grid').innerHTML=f.map(p=>`
+    <div class="card" onclick="openModal('${p.sku.replace(/'/g,"\\'")}')">
+      <div class="card-img">
+        ${p.imgLocal?`<img src="${p.imgLocal}" alt="${p.name}">`:`<div class="card-ph" style="background:#374151;color:rgba(255,255,255,.8)">${icon(p.category)}</div>`}
+      </div>
+      <div class="card-info">
+        <div class="card-name" title="${p.name}">${p.name}</div>
+        <div style="font-size:10px;color:var(--muted)">${p.sku}${p.children?.length?' · '+p.children.length+' צבעים':''}</div>
+        <div class="card-price">₪${p.price}</div>
+      </div>
+    </div>`).join('');
+}
+
+function setCat(c,el){cat=c;document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderGrid();}
+
+function openModal(sku){
+  const p=PRODUCTS.find(x=>x.sku===sku);if(!p)return;
+  mSku=sku;mVi=0;mQtyN=1;
+  document.getElementById('m-name').textContent=p.name+' '+p.sku;
+  document.getElementById('m-price').textContent='₪'+p.price;
+  document.getElementById('m-qty').textContent=1;
+  const img=document.getElementById('m-img');
+  const ph=document.getElementById('m-img-ph');
+  if(p.imgLocal){img.src=p.imgLocal;img.style.display='block';ph.style.display='none';}
+  else{img.style.display='none';ph.style.display='block';ph.textContent=icon(p.category);}
+  document.getElementById('m-variants').innerHTML=(p.children||[]).length?p.children.map((c,i)=>
+    `<div class="variant-btn ${i===0?'active':''}" id="vb-${i}" onclick="selV(${i})">
+      <div class="swatch" style="background:${cFor(c.color)}"></div>${c.color} — ₪${c.price}
+    </div>`).join(''):'<div style="font-size:12px;color:var(--muted)">ללא וריאנטים</div>';
+  document.getElementById('modal').classList.remove('hidden');
+}
+
+function selV(i){
+  mVi=i;
+  const p=PRODUCTS.find(x=>x.sku===mSku);if(!p)return;
+  const v=p.children[i];
+  document.getElementById('m-price').textContent='₪'+v.price;
+  if(v.imgLocal){const img=document.getElementById('m-img');img.src=v.imgLocal;img.style.display='block';document.getElementById('m-img-ph').style.display='none';}
+  document.querySelectorAll('[id^="vb-"]').forEach(el=>el.classList.remove('active'));
+  document.getElementById('vb-'+i)?.classList.add('active');
+}
+
+function mQty(d){mQtyN=Math.max(1,mQtyN+d);document.getElementById('m-qty').textContent=mQtyN;}
+
+function addFromModal(){
+  const p=PRODUCTS.find(x=>x.sku===mSku);if(!p)return;
+  const v=p.children[mVi];
+  const key=mSku+'_'+(v?.sku||'p');
+  cart[key]={qty:(cart[key]?.qty||0)+mQtyN,price:v?v.price:p.price,name:p.name+' '+p.sku+(v?' ('+v.color+')':''),sku:v?.sku||p.sku};
+  document.getElementById('modal').classList.add('hidden');
+  updateCart();
+  toast('✓ נוסף!','#1D9E75');
+}
+
+function updateCart(){
+  const items=Object.values(cart).filter(x=>x.qty>0);
+  const total=items.reduce((s,i)=>s+i.price*i.qty,0);
+  const count=items.reduce((s,i)=>s+i.qty,0);
+  const bar=document.getElementById('cart-bar');
+  bar.className='cart-bar'+(count?' show':'');
+  document.getElementById('cb-n').textContent=count;
+  document.getElementById('cb-total').textContent='₪'+total.toLocaleString();
+}
+
+function showOrderView(){
+  const items=Object.values(cart).filter(x=>x.qty>0);
+  const total=items.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('order-summary').innerHTML=items.map(i=>`
+    <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid var(--border)">
+      <span>${i.name} × ${i.qty}</span><span style="font-weight:600">₪${i.price*i.qty}</span>
+    </div>`).join('');
+  document.getElementById('order-total').textContent=total.toLocaleString();
+  document.getElementById('catalog-view').classList.add('hidden');
+  document.getElementById('order-view').classList.remove('hidden');
+  document.getElementById('cart-bar').className='cart-bar';
+}
+
+function showCatalog(){
+  document.getElementById('catalog-view').classList.remove('hidden');
+  document.getElementById('order-view').classList.add('hidden');
+  updateCart();
+}
+
+async function submitOrder(){
+  const name=document.getElementById('cust-name').value.trim();
+  if(!name){alert('נא למלא שם');return;}
+  const items=Object.values(cart).filter(x=>x.qty>0);
+  const total=items.reduce((s,i)=>s+i.price*i.qty,0);
+  const r=await fetch('/api/quicksell/'+token+'/order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+    customerName:name,customerPhone:document.getElementById('cust-phone').value,
+    notes:document.getElementById('cust-notes').value,
+    items:items.map(i=>({sku:i.sku,name:i.name,qty:i.qty,price:i.price,total:i.price*i.qty})),
+    total
+  })}).then(r=>r.json());
+  if(r.success){
+    document.getElementById('order-view').classList.add('hidden');
+    document.getElementById('success-view').classList.remove('hidden');
+  }
+}
+
+function toast(msg,color){
+  const t=document.getElementById('toast');t.textContent=msg;t.style.background=color;
+  t.classList.add('show');clearTimeout(window._tt);window._tt=setTimeout(()=>t.classList.remove('show'),2000);
+}
+
+init();
+</script>
+</body>
+</html>
