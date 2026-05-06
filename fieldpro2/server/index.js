@@ -298,8 +298,8 @@ app.post('/api/import/excel', auth, adminOnly, uploadMem.single('file'), async (
     const headers = rows[0].map(h => String(h || '').trim());
     const headersLower = headers.map(h => h.toLowerCase());
 
-    // זיהוי פורמט Pepperi לפי כותרות
-    const isPepperi = headers.some(h => h === 'Main Category') || headers.some(h => h.includes('קטלוג') || h.includes('מחיר'));
+    // זיהוי פורמט Pepperi לפי כותרות מדויקות
+    const isPepperi = headers.some(h => h === 'Main Category') || headers.some(h => h.trim() === 'קוד פריט') || headers.some(h => h.trim() === 'קוד דגם');
 
     // פונקציות עזר לחיפוש עמודות
     const gcExact = name => headers.findIndex(h => h === name);
@@ -308,17 +308,17 @@ app.post('/api/import/excel', auth, adminOnly, uploadMem.single('file'), async (
     let colSku, colParent, colName, colPrice, colColor, colQty, colCat, colImg, colDiscount;
 
     if (isPepperi) {
-      // פורמט Pepperi - חיפוש מדויק כולל טיפול ברווחים
+      // פורמט Pepperi - כותרות מדויקות מהקובץ האמיתי
       colSku = headers.findIndex(h => h.trim() === 'קוד פריט');
-      colParent = headers.findIndex(h => h.trim() === 'קוד כשף');
-      colName = headers.findIndex(h => h.trim() === 'פנת');
+      colParent = headers.findIndex(h => h.trim() === 'קוד דגם');
+      colName = headers.findIndex(h => h.trim() === 'תאור');
       colPrice = headers.findIndex(h => h.trim() === 'מחיר סיטונאי');
-      colColor = headers.findIndex(h => h.trim() === 'צבע פנ');
-      colQty = headers.findIndex(h => h.trim() === 'פרחח');
+      colColor = headers.findIndex(h => h.trim() === 'ממד 1 צבע');
+      colQty = headers.findIndex(h => h.trim() === 'מלאי');
       colCat = gcExact('Main Category');
       colImg = gcExact('Product picture URL');
-      // חיפוש עמודת הנחה עם trim לכל כותרת
-      colDiscount = headers.findIndex(h => h.trim().includes('הנחה'));
+      // חיפוש עמודת הנחה עם trim לטיפול ברווח
+      colDiscount = headers.findIndex(h => h.trim() === 'הנחה');
     } else {
       // פורמט סטנדרטי
       colName = gc('product name') !== -1 ? gc('product name') : gc('name');
@@ -365,9 +365,13 @@ app.post('/api/import/excel', auth, adminOnly, uploadMem.single('file'), async (
 
       const rawName = colName >= 0 ? String(row[colName] || '') : '';
       const category = colCat >= 0 ? String(row[colCat] || '') : '';
+      const color = colColor >= 0 ? String(row[colColor] || '') : '';
       const allowRaw = colDiscount >= 0 ? row[colDiscount] : 1;
       const imgUrl = colImg >= 0 ? String(row[colImg] || '') : '';
-      const productName = (rawName && rawName !== 'False') ? rawName : category;
+      // אם תאור הוא False או ריק — השתמש בקטגוריה + צבע
+      const productName = (rawName && rawName !== 'False' && rawName !== 'false') 
+        ? rawName 
+        : (category + (color ? ' - ' + color : ''));
 
       const productData = {
         sku,
@@ -375,7 +379,7 @@ app.post('/api/import/excel', auth, adminOnly, uploadMem.single('file'), async (
         name: productName || sku,
         category,
         price: colPrice >= 0 ? (parseFloat(row[colPrice]) || 0) : 0,
-        color: colColor >= 0 ? String(row[colColor] || '') : '',
+        color: color,
         qty: colQty >= 0 ? (parseInt(row[colQty]) || 0) : 0,
         imgUrl,
         allowDiscount: !(allowRaw === 0 || allowRaw === '0'),
