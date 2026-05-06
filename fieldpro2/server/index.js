@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'fieldpro_secret_2024';
 const MONGODB_URI = process.env.MONGODB_URI;
 
-mongoose.connect(MONGODB_URI).then(() => console.log('â MongoDB connected')).catch(e => console.error('MongoDB error:', e));
+mongoose.connect(MONGODB_URI).then(() => console.log('Ã¢ÂÂ MongoDB connected')).catch(e => console.error('MongoDB error:', e));
 
 const UPLOADS_DIR = path.join(__dirname, '..', 'uploads');
 fs.mkdirSync(UPLOADS_DIR, { recursive: true });
