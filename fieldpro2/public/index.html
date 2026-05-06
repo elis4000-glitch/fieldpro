@@ -149,18 +149,18 @@ h2{font-size:16px;font-weight:600}
 <body>
 <div id="login-screen">
   <div class="login-logo">Field<span>Pro</span></div>
-  <div class="login-sub">מערכת סוכני שטח מקצועית</div>
+  <div class="login-sub">××¢×¨××ª ×¡××× × ×©×× ××§×¦××¢××ª</div>
   <div class="login-card">
-    <h3>התחברות</h3>
-    <div class="form-group"><label>שם משתמש</label><input class="form-input" id="inp-username" placeholder="שם משתמש" autocomplete="username"></div>
-    <div class="form-group"><label>סיסמה</label><input class="form-input" id="inp-password" type="password" placeholder="סיסמה" autocomplete="current-password"></div>
-    <button class="btn-login" onclick="doLogin()">כניסה</button>
+    <h3>××ª×××¨××ª</h3>
+    <div class="form-group"><label>×©× ××©×ª××©</label><input class="form-input" id="inp-username" placeholder="×©× ××©×ª××©" autocomplete="username"></div>
+    <div class="form-group"><label>×¡××¡××</label><input class="form-input" id="inp-password" type="password" placeholder="×¡××¡××" autocomplete="current-password"></div>
+    <button class="btn-login" onclick="doLogin()">×× ××¡×</button>
     <div class="login-error" id="login-error"></div>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
-<button class="barcode-btn" onclick="openBarcodeScanner()" title="סרוק ברקוד">📷</button>
+<button class="barcode-btn" onclick="openBarcodeScanner()" title="×¡×¨××§ ××¨×§××">ð·</button>
 
 <div class="app" id="main-app" style="display:none">
   <div class="topbar">
@@ -169,126 +169,127 @@ h2{font-size:16px;font-weight:600}
     <div class="topbar-right">
       <div class="net-dot" id="net-dot"></div>
       <div class="user-name" id="top-user"></div>
-      <button class="btn btn-sm" style="background:rgba(255,255,255,.15);color:#fff;border-color:transparent" onclick="doLogout()">יציאה</button>
+      <button class="btn btn-sm" style="background:rgba(255,255,255,.15);color:#fff;border-color:transparent" onclick="doLogout()">××¦×××</button>
     </div>
   </div>
   <div class="layout">
     <div class="sidebar">
-      <div class="nav-section">ראשי</div>
-      <div class="nav-item active" onclick="showPage('dashboard',this)"><span>📊</span> לוח בקרה</div>
-      <div class="nav-item" onclick="showPage('catalog',this)"><span>🏪</span> קטלוג <span class="nav-badge" id="nb-products" style="display:none">0</span></div>
-      <div class="nav-item" onclick="showPage('orders',this)"><span>📦</span> הזמנה <span class="nav-badge" id="nb-cart" style="display:none">0</span></div>
-      <div class="nav-item" onclick="showPage('order-history',this)"><span>📋</span> היסטוריה</div>
-      <div class="nav-item" onclick="showPage('customers',this)"><span>👥</span> לקוחות</div>
-      <div class="nav-section" id="admin-nav" style="display:none">מנהל</div>
-      <div class="nav-item admin-only" onclick="showPage('agents',this)" style="display:none"><span>🧑‍💼</span> סוכנים</div>
-      <div class="nav-item admin-only" onclick="showPage('map',this)" style="display:none"><span>🗺</span> מפת סוכנים</div>
-      <div class="nav-item admin-only" onclick="showPage('reports',this)" style="display:none"><span>📈</span> דוחות AI</div>
-      <div class="nav-item admin-only" onclick="showPage('import',this)" style="display:none"><span>📥</span> ייבוא Excel</div>
-      <div class="nav-item admin-only" onclick="showPage('images',this)" style="display:none"><span>📸</span> תמונות</div>
-      <div class="nav-item" onclick="showPage('settings',this)"><span>⚙️</span> הגדרות</div>
+      <div class="nav-section">×¨××©×</div>
+      <div class="nav-item active" onclick="showPage('dashboard',this)"><span>ð</span> ××× ××§×¨×</div>
+      <div class="nav-item" onclick="showPage('catalog',this)"><span>ðª</span> ×§×××× <span class="nav-badge" id="nb-products" style="display:none">0</span></div>
+      <div class="nav-item" onclick="showPage('orders',this)"><span>ð¦</span> ×××× × <span class="nav-badge" id="nb-cart" style="display:none">0</span></div>
+      <div class="nav-item" onclick="showPage('order-history',this)"><span>ð</span> ×××¡×××¨××</div>
+      <div class="nav-item" onclick="showPage('customers',this)"><span>ð¥</span> ××§××××ª</div>
+      <div class="nav-section" id="admin-nav" style="display:none">×× ××</div>
+      <div class="nav-item admin-only" onclick="showPage('agents',this)" style="display:none"><span>ð§âð¼</span> ×¡××× ××</div>
+      <div class="nav-item admin-only" onclick="showPage('map',this)" style="display:none"><span>ðº</span> ××¤×ª ×¡××× ××</div>
+      <div class="nav-item admin-only" onclick="showPage('reports',this)" style="display:none"><span>ð</span> ×××××ª AI</div>
+      <div class="nav-item admin-only" onclick="showPage('import',this)" style="display:none"><span>ð¥</span> ××××× Excel</div>
+      <div class="nav-item admin-only" onclick="showPage('images',this)" style="display:none"><span>ð¸</span> ×ª××× ××ª</div>
+      <div class="nav-item" onclick="showPage('settings',this)"><span>âï¸</span> ××××¨××ª</div>
     </div>
     <div class="main" id="main-content">
       <div class="page active" id="page-dashboard">
-        <h2 style="margin-bottom:1rem">לוח בקרה</h2>
+        <h2 style="margin-bottom:1rem">××× ××§×¨×</h2>
         <div class="stats-grid" id="dash-stats">
-          <div class="stat-card"><div class="stat-label">מוצרים</div><div class="stat-value" id="s-products">-</div></div>
-          <div class="stat-card"><div class="stat-label">הזמנות</div><div class="stat-value" id="s-orders">-</div></div>
-          <div class="stat-card"><div class="stat-label">לקוחות</div><div class="stat-value" id="s-customers">-</div></div>
-          <div class="stat-card"><div class="stat-label">מחזור</div><div class="stat-value" id="s-revenue" style="font-size:16px">-</div></div>
+          <div class="stat-card"><div class="stat-label">×××¦×¨××</div><div class="stat-value" id="s-products">-</div></div>
+          <div class="stat-card"><div class="stat-label">×××× ××ª</div><div class="stat-value" id="s-orders">-</div></div>
+          <div class="stat-card"><div class="stat-label">××§××××ª</div><div class="stat-value" id="s-customers">-</div></div>
+          <div class="stat-card"><div class="stat-label">×××××¨</div><div class="stat-value" id="s-revenue" style="font-size:16px">-</div></div>
         </div>
         <div class="card" style="margin-bottom:1rem">
-          <div style="font-size:13px;font-weight:600;margin-bottom:10px">הזמנות אחרונות</div>
-          <div id="dash-recent-orders" style="font-size:12px;color:var(--muted)">טוען...</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:10px">×××× ××ª ×××¨×× ××ª</div>
+          <div id="dash-recent-orders" style="font-size:12px;color:var(--muted)">×××¢×...</div>
         </div>
       </div>
       <div class="page" id="page-catalog">
         <div class="page-header">
-          <h2>קטלוג <span style="font-size:12px;font-weight:400;color:var(--muted)" id="cat-count"></span></h2>
-          <div style="display:flex;gap:6px"><button class="btn btn-sm" onclick="openQuicksellModal()">📤 שלח קטלוג</button></div>
+          <h2>×§×××× <span style="font-size:12px;font-weight:400;color:var(--muted)" id="cat-count"></span></h2>
+          <div style="display:flex;gap:6px"><button class="btn btn-sm" onclick="openQuicksellModal()">ð¤ ×©×× ×§××××</button></div>
         </div>
-        <input class="search-inp" id="cat-search" placeholder="חיפוש שם, SKU, צבע, ברקוד..." oninput="renderCatalog()">
+        <input class="search-inp" id="cat-search" placeholder="×××¤××© ×©×, SKU, ×¦××¢, ××¨×§××..." oninput="renderCatalog()">
         <div class="filter-row" id="cat-filters">
-          <div class="chip active" onclick="setCatFilter('all',this)">הכל</div>
-          <div class="timer-ctrl">⏱<input type="number" id="tv" value="3" min="1" oninput="updateTimer()"><select id="tu" onchange="updateTimer()"><option value="1000">שנ'</option><option value="60000">דק'</option><option value="3600000">שע'</option><option value="86400000">ימים</option><option value="604800000">שב'</option></select></div>
+          <div class="chip active" onclick="setCatFilter('all',this)">×××</div>
+          <div class="timer-ctrl">â±<input type="number" id="tv" value="3" min="1" oninput="updateTimer()"><select id="tu" onchange="updateTimer()"><option value="1000">×©× '</option><option value="60000">××§'</option><option value="3600000">×©×¢'</option><option value="86400000">××××</option><option value="604800000">×©×'</option></select></div>
         </div>
         <div class="cat-grid" id="cat-grid"></div>
       </div>
       <div class="page" id="page-orders">
         <div class="page-header">
-          <h2>הזמנה פעילה</h2>
+          <h2>×××× × ×¤×¢×××</h2>
           <div style="display:flex;gap:6px">
-            <select id="order-customer" class="search-inp" style="width:auto;margin:0" onchange="setOrderCustomer()"><option value="">בחר לקוח...</option></select>
-            <button class="btn btn-primary btn-sm" onclick="submitOrder()">📤 שלח הזמנה</button>
+            <select id="order-customer" class="search-inp" style="width:auto;margin:0" onchange="setOrderCustomer()"><option value="">×××¨ ××§××...</option></select>
+            <button class="btn btn-primary btn-sm" onclick="submitOrder()">ð¤ ×©×× ×××× ×</button>
           </div>
         </div>
         <div id="order-items-list"></div>
         <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
-          <div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="color:var(--muted)">סכום לפני הנחה:</span><span id="ot-subtotal">₪0</span></div>
-          <div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="color:var(--muted)">הנחה:</span><span id="ot-discount" style="color:var(--danger)">₪0</span></div>
-          <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)"><span style="font-weight:600">סה"כ לתשלום:</span><span style="font-size:20px;font-weight:700;color:var(--green)" id="ot-total">₪0</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="color:var(--muted)">×¡××× ××¤× × ×× ××:</span><span id="ot-subtotal">âª0</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="color:var(--muted)">×× ××:</span><span id="ot-discount" style="color:var(--danger)">âª0</span></div>
+          <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)"><span style="font-weight:600">×¡×"× ××ª×©×××:</span><span style="font-size:20px;font-weight:700;color:var(--green)" id="ot-total">âª0</span></div>
         </div>
         <div style="margin-top:1.5rem;padding-top:1rem;border-top:2px dashed var(--border)">
-          <div style="font-size:13px;font-weight:600;margin-bottom:.5rem;color:var(--danger)">↩️ החזרות</div>
-          <button class="btn btn-sm btn-danger" onclick="openReturnModal()">+ הוסף החזרה</button>
+          <div style="font-size:13px;font-weight:600;margin-bottom:.5rem;color:var(--danger)">â©ï¸ ××××¨××ª</div>
+          <button class="btn btn-sm btn-danger" onclick="openReturnModal()">+ ×××¡×£ ××××¨×</button>
           <div id="returns-list" style="margin-top:8px"></div>
         </div>
       </div>
       <div class="page" id="page-order-history">
         <div class="page-header">
-          <h2>היסטוריית הזמנות</h2>
+          <h2>×××¡×××¨×××ª ×××× ××ª</h2>
           <select id="history-filter" class="search-inp" style="width:auto;margin:0" onchange="loadOrderHistory()">
-            <option value="">כל הסטטוסים</option><option value="pending">ממתין</option><option value="confirmed">אושר</option><option value="cancelled">בוטל</option>
+            <option value="">×× ××¡××××¡××</option><option value="pending">×××ª××</option><option value="confirmed">×××©×¨</option><option value="cancelled">××××</option>
           </select>
         </div>
         <div id="order-history-list"></div>
       </div>
       <div class="page" id="page-customers">
-        <div class="page-header"><h2>לקוחות</h2><button class="btn btn-primary btn-sm" onclick="showAddCustomerModal()">+ לקוח חדש</button></div>
-        <input class="search-inp" id="cust-search" placeholder="חיפוש..." oninput="renderCustomers()">
+        <div class="page-header"><h2>××§××××ª</h2><button class="btn btn-primary btn-sm" onclick="showAddCustomerModal()">+ ××§×× ×××©</button></div>
+        <input class="search-inp" id="cust-search" placeholder="×××¤××©..." oninput="renderCustomers()">
         <div class="cust-grid" id="cust-grid"></div>
       </div>
       <div class="page" id="page-agents">
-        <div class="page-header"><h2>ניהול סוכנים</h2><button class="btn btn-primary btn-sm" onclick="showAddAgentModal()">+ סוכן חדש</button></div>
+        <div class="page-header"><h2>× ×××× ×¡××× ××</h2><button class="btn btn-primary btn-sm" onclick="showAddAgentModal()">+ ×¡××× ×××©</button></div>
         <div id="agents-list"></div>
       </div>
       <div class="page" id="page-map">
-        <div class="page-header"><h2>🗺 מיקום סוכנים</h2><button class="btn btn-sm" onclick="loadAgentLocations()">🔄 רענן</button></div>
-        <div id="agents-map">לחץ רענן לטעינת מיקומים</div>
+        <div class="page-header"><h2>ðº ×××§×× ×¡××× ××</h2><button class="btn btn-sm" onclick="loadAgentLocations()">ð ×¨×¢× ×</button></div>
+        <div id="agents-map">×××¥ ×¨×¢× × ×××¢×× ×ª ×××§××××</div>
       </div>
       <div class="page" id="page-reports">
-        <div class="page-header"><h2>📈 דוחות מכירות</h2><button class="btn btn-primary btn-sm" onclick="loadReports()">🤖 ניתוח AI</button></div>
-        <div id="reports-content"><div style="color:var(--muted);font-size:13px">לחץ "ניתוח AI" לקבלת דוח מלא</div></div>
+        <div class="page-header"><h2>ð ×××××ª ××××¨××ª</h2><button class="btn btn-primary btn-sm" onclick="loadReports()">ð¤ × ××ª×× AI</button></div>
+        <div id="reports-content"><div style="color:var(--muted);font-size:13px">×××¥ "× ××ª×× AI" ××§×××ª ××× ×××</div></div>
       </div>
       <div class="page" id="page-import">
-        <div class="page-header"><h2>📥 ייבוא Excel</h2></div>
+        <div class="page-header"><h2>ð¥ ××××× Excel</h2></div>
         <div class="up-zone" onclick="document.getElementById('excel-file').click()">
           <input type="file" id="excel-file" accept=".xlsx,.xls,.csv" style="display:none" onchange="importExcel(this)">
-          <div style="font-size:28px;margin-bottom:6px">📊</div>
-          <div style="font-size:13px;font-weight:500;margin-bottom:4px">גרור Excel לכאן או לחץ לבחירה</div>
-          <div style="font-size:11px;color:var(--muted)">עמודות: Product name, SKU, Parent SKU, Price, Colors, Qty, Tag, Picture URL, Discount (1/0)</div>
+          <div style="font-size:28px;margin-bottom:6px">ð</div>
+          <div style="font-size:13px;font-weight:500;margin-bottom:4px">××¨××¨ Excel ×××× ×× ×××¥ ×××××¨×</div>
+          <div style="font-size:11px;color:var(--muted)">×¢×××××ª: Product name, SKU, Parent SKU, Price, Colors, Qty, Tag, Picture URL, Discount (1/0)</div>
         </div>
         <div id="import-result" style="font-size:13px;display:none"></div>
+        <div style="margin-top:16px"><button class="btn" onclick="downloadLastExcel()" style="font-size:13px;padding:8px 18px">📥 הורד אקסל אחרון</button></div>
       </div>
       <div class="page" id="page-images">
-        <div class="page-header"><h2>📸 תמונות מוצרים</h2><span id="img-count" style="font-size:12px;color:var(--muted)"></span></div>
+        <div class="page-header"><h2>ð¸ ×ª××× ××ª ×××¦×¨××</h2><span id="img-count" style="font-size:12px;color:var(--muted)"></span></div>
         <div class="up-zone" onclick="document.getElementById('bulk-imgs').click()">
           <input type="file" id="bulk-imgs" multiple accept="image/*" style="display:none" onchange="bulkUpload(this)">
-          <div style="font-size:28px;margin-bottom:6px">📸</div>
-          <div style="font-size:13px;font-weight:500;margin-bottom:4px">העלה תמונות מרובות</div>
-          <div style="font-size:11px;color:var(--muted)">שם קובץ = SKU (לדוגמה SL-772.jpg)</div>
+          <div style="font-size:28px;margin-bottom:6px">ð¸</div>
+          <div style="font-size:13px;font-weight:500;margin-bottom:4px">××¢×× ×ª××× ××ª ××¨××××ª</div>
+          <div style="font-size:11px;color:var(--muted)">×©× ×§×××¥ = SKU (×××××× SL-772.jpg)</div>
         </div>
         <div class="cat-grid" id="img-grid"></div>
       </div>
       <div class="page" id="page-settings">
-        <div class="page-header"><h2>⚙️ הגדרות</h2></div>
+        <div class="page-header"><h2>âï¸ ××××¨××ª</h2></div>
         <div class="card">
-          <div style="font-size:13px;font-weight:600;margin-bottom:10px">פרטי חברה</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:10px">×¤×¨×× ×××¨×</div>
           <div style="display:flex;flex-direction:column;gap:8px">
-            <input class="form-input" id="set-company" placeholder="שם החברה">
-            <input class="form-input" id="set-email" placeholder="אימייל לקבלת הזמנות">
-            <input class="form-input" id="set-whatsapp" placeholder="מספר WhatsApp (972501234567)">
-            <button class="btn btn-primary btn-sm" onclick="saveSettings()">שמור הגדרות</button>
+            <input class="form-input" id="set-company" placeholder="×©× ××××¨×">
+            <input class="form-input" id="set-email" placeholder="×××××× ××§×××ª ×××× ××ª">
+            <input class="form-input" id="set-whatsapp" placeholder="××¡×¤×¨ WhatsApp (972501234567)">
+            <button class="btn btn-primary btn-sm" onclick="saveSettings()">×©×××¨ ××××¨××ª</button>
           </div>
         </div>
       </div>
@@ -296,17 +297,17 @@ h2{font-size:16px;font-weight:600}
   </div>
   <div class="cart-bar" id="cart-bar">
     <div class="cart-badge" id="cb-count">0</div>
-    <span style="font-size:13px;color:var(--muted)">פריטים</span>
-    <span style="font-size:14px;font-weight:700;color:var(--green)" id="cb-total">₪0</span>
-    <button class="btn btn-primary btn-sm" style="margin-right:auto" onclick="showPage('orders')">לסיום הזמנה ←</button>
+    <span style="font-size:13px;color:var(--muted)">×¤×¨××××</span>
+    <span style="font-size:14px;font-weight:700;color:var(--green)" id="cb-total">âª0</span>
+    <button class="btn btn-primary btn-sm" style="margin-right:auto" onclick="showPage('orders')">××¡××× ×××× × â</button>
   </div>
   <div class="bottom-nav">
     <div class="bnav-items">
-      <div class="bnav-item active" onclick="showPage('dashboard',this)"><div class="bnav-icon">📊</div><div>בקרה</div></div>
-      <div class="bnav-item" onclick="showPage('catalog',this)"><div class="bnav-icon">🏪</div><div>קטלוג</div></div>
-      <div class="bnav-item" onclick="showPage('orders',this)"><div class="bnav-icon">📦</div><div>הזמנה</div></div>
-      <div class="bnav-item" onclick="showPage('customers',this)"><div class="bnav-icon">👥</div><div>לקוחות</div></div>
-      <div class="bnav-item" onclick="showPage('settings',this)"><div class="bnav-icon">⚙️</div><div>הגדרות</div></div>
+      <div class="bnav-item active" onclick="showPage('dashboard',this)"><div class="bnav-icon">ð</div><div>××§×¨×</div></div>
+      <div class="bnav-item" onclick="showPage('catalog',this)"><div class="bnav-icon">ðª</div><div>×§××××</div></div>
+      <div class="bnav-item" onclick="showPage('orders',this)"><div class="bnav-icon">ð¦</div><div>×××× ×</div></div>
+      <div class="bnav-item" onclick="showPage('customers',this)"><div class="bnav-icon">ð¥</div><div>××§××××ª</div></div>
+      <div class="bnav-item" onclick="showPage('settings',this)"><div class="bnav-icon">âï¸</div><div>××××¨××ª</div></div>
     </div>
   </div>
 </div>
@@ -314,13 +315,13 @@ h2{font-size:16px;font-weight:600}
 <div class="modal-bg hidden" id="prod-modal" onclick="if(event.target===this)closeProdModal()">
   <div class="modal-box">
     <div class="modal-handle"></div>
-    <button class="modal-close" onclick="closeProdModal()">✕</button>
-    <div class="modal-img-area" id="pm-img-area"><div class="modal-img-ph" id="pm-img-ph">🛍</div></div>
+    <button class="modal-close" onclick="closeProdModal()">â</button>
+    <div class="modal-img-area" id="pm-img-area"><div class="modal-img-ph" id="pm-img-ph">ð</div></div>
     <div class="modal-body">
       <div class="modal-title" id="pm-name"></div>
       <div class="modal-meta" id="pm-meta"></div>
       <div class="modal-price" id="pm-price"></div>
-      <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:8px">בחר וריאנט:</div>
+      <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:8px">×××¨ ××¨××× ×:</div>
       <div class="modal-variants" id="pm-variants"></div>
       <div class="modal-footer">
         <div style="display:flex;align-items:center;gap:5px">
@@ -328,7 +329,7 @@ h2{font-size:16px;font-weight:600}
           <div class="qty-num" id="pm-qty">1</div>
           <button class="qty-btn" onclick="pmQty(1)">+</button>
         </div>
-        <button class="btn btn-primary" style="flex:1" onclick="addFromModal()">+ הוסף להזמנה</button>
+        <button class="btn btn-primary" style="flex:1" onclick="addFromModal()">+ ×××¡×£ ××××× ×</button>
       </div>
     </div>
   </div>
@@ -338,15 +339,15 @@ h2{font-size:16px;font-weight:600}
   <div class="modal-box">
     <div class="modal-handle"></div>
     <div class="modal-body">
-      <h3 style="margin-bottom:1rem">📤 שלח קטלוג ללקוח</h3>
-      <div class="form-group"><label>לקוח</label><select class="form-input" id="qs-customer"><option value="">ללא לקוח</option></select></div>
+      <h3 style="margin-bottom:1rem">ð¤ ×©×× ×§×××× ×××§××</h3>
+      <div class="form-group"><label>××§××</label><select class="form-input" id="qs-customer"><option value="">××× ××§××</option></select></div>
       <div class="form-group">
-        <label>קטגוריות לשליחה (ריק = הכל)</label>
+        <label>×§××××¨×××ª ××©×××× (×¨××§ = ×××)</label>
         <div id="qs-categories" style="max-height:200px;overflow-y:auto;border:1px solid var(--border);border-radius:8px;padding:4px"></div>
       </div>
       <div style="display:flex;gap:8px;margin-top:1rem;flex-wrap:wrap">
-        <button class="btn btn-primary" onclick="createQuicksellLink()">📋 צור קישור</button>
-        <button class="btn btn-whatsapp" onclick="sendQuicksellWhatsapp()">💬 שלח WhatsApp</button>
+        <button class="btn btn-primary" onclick="createQuicksellLink()">ð ×¦××¨ ×§××©××¨</button>
+        <button class="btn btn-whatsapp" onclick="sendQuicksellWhatsapp()">ð¬ ×©×× WhatsApp</button>
       </div>
       <div id="qs-link-result" style="margin-top:12px;font-size:12px;word-break:break-all;color:var(--muted)"></div>
     </div>
@@ -365,12 +366,12 @@ let modalSku = null, modalVi = 0, modalQtyN = 1;
 
 const CM = {black:'#111',blue:'#2563EB',grey:'#9CA3AF',gray:'#9CA3AF',white:'#F9FAFB',red:'#DC2626',green:'#16A34A',pink:'#EC4899',yellow:'#EAB308',bronze:'#92400E',haki:'#78716C',kaki:'#78716C',beige:'#E8D5B7',silver:'#C0C0C0',gold:'#F59E0B',orange:'#F97316',purple:'#7C3AED',brown:'#92400E',coffee:'#6B4226','navi blue':'#1E3A8A','lak black':'#111','lak red':'#991B1B','d.grey':'#6B7280','l.grey':'#D1D5DB','d.haki':'#57534E','broken white':'#FFFBEB'};
 function cFor(s){if(!s)return'#9CA3AF';const l=s.toLowerCase();for(const[k,v]of Object.entries(CM))if(l.includes(k))return v;return'#9CA3AF';}
-const CAT_ICON={'תיקי גברים':'👜','אופנה':'👗','ארנקים':'💳','קרינקל':'🎀','תיקי גב למחשב':'💼','ארנקי גברים עור':'🪙','מבצעים':'🏷','ארנק עור אישה':'👝'};
-const CAT_BG={'תיקי גברים':'#1F2937','אופנה':'#4C1D95','ארנקים':'#78350F','קרינקל':'#831843','תיקי גב למחשב':'#1E3A8A','ארנקי גברים עור':'#3B1F0A','מבצעים':'#7F1D1D'};
+const CAT_ICON={'×ª××§× ×××¨××':'ð','×××¤× ×':'ð','××¨× ×§××':'ð³','×§×¨×× ×§×':'ð','×ª××§× ×× ××××©×':'ð¼','××¨× ×§× ×××¨×× ×¢××¨':'ðª','×××¦×¢××':'ð·','××¨× ×§ ×¢××¨ ×××©×':'ð'};
+const CAT_BG={'×ª××§× ×××¨××':'#1F2937','×××¤× ×':'#4C1D95','××¨× ×§××':'#78350F','×§×¨×× ×§×':'#831843','×ª××§× ×× ××××©×':'#1E3A8A','××¨× ×§× ×××¨×× ×¢××¨':'#3B1F0A','×××¦×¢××':'#7F1D1D'};
 function catBg(c){return CAT_BG[c?.trim()]||'#374151';}
-function catIcon(c){return CAT_ICON[c?.trim()]||'🛍';}
+function catIcon(c){return CAT_ICON[c?.trim()]||'ð';}
 
-// תמונה - imgLocal קודם, אחר כך imgUrl מ-Pepperi
+// ×ª××× × - imgLocal ×§×××, ×××¨ ×× imgUrl ×-Pepperi
 function getImg(p) { return p?.imgLocal || p?.imgUrl || ''; }
 
 async function api(path, opts={}) {
@@ -402,7 +403,7 @@ async function doLogin() {
     localStorage.setItem('fp_user', JSON.stringify(USER));
     initApp();
   } else {
-    document.getElementById('login-error').textContent = r?.error || 'שגיאה בהתחברות';
+    document.getElementById('login-error').textContent = r?.error || '×©×××× ×××ª×××¨××ª';
   }
 }
 
@@ -419,7 +420,7 @@ async function initApp() {
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('main-app').style.display = 'flex';
   document.getElementById('top-user').textContent = USER?.name || '';
-  document.getElementById('top-role').textContent = USER?.role === 'admin' ? '👑 מנהל' : '🧑‍💼 סוכן';
+  document.getElementById('top-role').textContent = USER?.role === 'admin' ? 'ð ×× ××' : 'ð§âð¼ ×¡×××';
   if (USER?.role === 'admin') {
     document.getElementById('admin-nav').style.display = 'block';
     document.querySelectorAll('.admin-only').forEach(el => el.style.display = 'flex');
@@ -455,7 +456,7 @@ async function loadProducts() {
 function buildCatFilters() {
   const row = document.getElementById('cat-filters');
   const timerHtml = row.querySelector('.timer-ctrl')?.outerHTML || '';
-  row.innerHTML = `<div class="chip ${catFilter==='all'?'active':''}" onclick="setCatFilter('all',this)">הכל</div>` +
+  row.innerHTML = `<div class="chip ${catFilter==='all'?'active':''}" onclick="setCatFilter('all',this)">×××</div>` +
     CATEGORIES.map(c => `<div class="chip ${catFilter===c?'active':''}" onclick="setCatFilter('${c.replace(/'/g,"\\'")}',this)">${catIcon(c)} ${c}</div>`).join('') + timerHtml;
 }
 
@@ -475,7 +476,7 @@ function renderCatalog() {
   grid.innerHTML = filtered.map((p, pi) => {
     const sid = p.sku.replace(/[^a-zA-Z0-9]/g, '_');
     const slides = [p, ...p.children].map((s, i) => {
-      // *** תיקון: imgLocal קודם, אחר כך imgUrl ***
+      // *** ×ª××§××: imgLocal ×§×××, ×××¨ ×× imgUrl ***
       const img = getImg(s);
       const bg = catBg(p.category);
       return `<div class="prod-img-slide ${i===0?'active':''}" id="sl-${sid}-${i}">
@@ -492,7 +493,7 @@ function renderCatalog() {
     }).join('');
     const dots = [p,...p.children].length > 1 ? `<div class="slide-dots">${[p,...p.children].map((_,i)=>`<div class="dot ${i===0?'active':''}" id="dot-${sid}-${i}"></div>`).join('')}</div>` : '';
     const thumbs = p.children.slice(0,5).map((c,i) =>
-      `<div class="vt ${i===0?'active':''}" id="vt-${sid}-${i}" onclick="pickV('${p.sku.replace(/'/g,"\\'")}',${i})" title="${c.color} ₪${c.price}">
+      `<div class="vt ${i===0?'active':''}" id="vt-${sid}-${i}" onclick="pickV('${p.sku.replace(/'/g,"\\'")}',${i})" title="${c.color} âª${c.price}">
         ${getImg(c) ? `<img src="${getImg(c)}" style="width:100%;height:100%;object-fit:cover">` : `<div class="vt-ph" style="background:${cFor(c.color)}">${(c.color||'?').substring(0,2).toUpperCase()}</div>`}
       </div>`).join('');
     const moreV = p.children.length > 5 ? `<div class="vt" style="background:#F3F4F6;font-size:9px;color:var(--muted)">+${p.children.length-5}</div>` : '';
@@ -501,25 +502,25 @@ function renderCatalog() {
       <div class="prod-img" onclick="openProdModal('${skuQ}')">
         ${slides}
         <div class="prod-cat-tag">${p.category||''}</div>
-        ${!p.allowDiscount ? '<div class="net-badge-prod">נטו</div>' : ''}
+        ${!p.allowDiscount ? '<div class="net-badge-prod">× ××</div>' : ''}
         ${dots}
-        <button class="upload-btn-card" onclick="event.stopPropagation();document.getElementById('upl-${sid}').click()" title="העלה תמונה">📸</button>
+        <button class="upload-btn-card" onclick="event.stopPropagation();document.getElementById('upl-${sid}').click()" title="××¢×× ×ª××× ×">ð¸</button>
         <input type="file" id="upl-${sid}" accept="image/*" style="display:none" onchange="uploadCardImg('${skuQ}',this)">
       </div>
       <div class="prod-info" onclick="openProdModal('${skuQ}')">
         <div class="prod-name" title="${p.name} ${p.sku}">${p.name} <span style="color:var(--muted);font-weight:400;font-size:10px">${p.sku}</span></div>
-        <div class="prod-sku-label">מלאי: ${p.qty} יח'${p.children.length?' · '+p.children.length+' צבעים':''}</div>
-        <div class="prod-price ${!p.allowDiscount?'net':''}" id="pr-${sid}">₪${p.price}${!p.allowDiscount?' (נטו)':''}</div>
+        <div class="prod-sku-label">××××: ${p.qty} ××'${p.children.length?' Â· '+p.children.length+' ×¦××¢××':''}</div>
+        <div class="prod-price ${!p.allowDiscount?'net':''}" id="pr-${sid}">âª${p.price}${!p.allowDiscount?' (× ××)':''}</div>
       </div>
       ${p.children.length ? `<div class="variants-row">${thumbs}${moreV}</div>` : ''}
       <div class="prod-actions">
         <button class="qty-btn" onclick="cqty('${skuQ}',-1)">-</button>
         <div class="qty-num" id="cq-${sid}">0</div>
         <button class="qty-btn" onclick="cqty('${skuQ}',1)">+</button>
-        <button class="btn btn-primary btn-sm" style="flex:1;margin-right:4px" onclick="addToCart('${skuQ}')">+ הוסף</button>
+        <button class="btn btn-primary btn-sm" style="flex:1;margin-right:4px" onclick="addToCart('${skuQ}')">+ ×××¡×£</button>
       </div>
     </div>`;
-  }).join('') || '<div style="text-align:center;padding:2rem;color:var(--muted)">אין מוצרים — ייבא Excel תחילה</div>';
+  }).join('') || '<div style="text-align:center;padding:2rem;color:var(--muted)">××× ×××¦×¨×× â ×××× Excel ×ª××××</div>';
   filtered.forEach((p, pi) => { selectedV[p.sku] = 0; startSlide(p.sku, [p,...p.children].length); });
 }
 
@@ -548,7 +549,7 @@ function pickV(sku, vi) {
   jumpSlide(sid, [p,...p.children].length, vi+1);
   p.children.slice(0,5).forEach((_,i) => document.getElementById('vt-'+sid+'-'+i)?.classList.toggle('active',i===vi));
   const v = p.children[vi];
-  if (v) { const pr = document.getElementById('pr-'+sid); if(pr) pr.textContent = '₪'+v.price+(p.allowDiscount?'':' (נטו)'); }
+  if (v) { const pr = document.getElementById('pr-'+sid); if(pr) pr.textContent = 'âª'+v.price+(p.allowDiscount?'':' (× ××)'); }
 }
 
 function updateTimer() {
@@ -571,7 +572,7 @@ async function uploadCardImg(sku, input) {
   if (r?.success) {
     const p = PRODUCTS.find(x=>x.sku===sku);
     if (p) p.imgLocal = r.imgLocal;
-    renderCatalog(); toast('✓ תמונה הועלתה', '#1D9E75');
+    renderCatalog(); toast('â ×ª××× × ×××¢××ª×', '#1D9E75');
   }
 }
 
@@ -582,21 +583,21 @@ function openProdModal(sku) {
   const ph = document.getElementById('pm-img-ph');
   area.querySelectorAll('img').forEach(el=>el.remove());
   area.style.background = catBg(p.category);
-  // *** תיקון: imgLocal קודם, אחר כך imgUrl ***
+  // *** ×ª××§××: imgLocal ×§×××, ×××¨ ×× imgUrl ***
   const imgSrc = getImg(p);
   if (imgSrc) {
     const img=document.createElement('img'); img.src=imgSrc; img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1';
     area.appendChild(img); ph.style.display='none';
   } else { ph.style.display='flex'; ph.textContent=catIcon(p.category); }
   document.getElementById('pm-name').textContent = p.name;
-  document.getElementById('pm-meta').textContent = `SKU: ${p.sku} · מלאי: ${p.qty} · ${p.children.length} צבעים${!p.allowDiscount?' · מחיר נטו (ללא הנחה)':''}`;
-  document.getElementById('pm-price').textContent = '₪'+p.price;
+  document.getElementById('pm-meta').textContent = `SKU: ${p.sku} Â· ××××: ${p.qty} Â· ${p.children.length} ×¦××¢××${!p.allowDiscount?' Â· ××××¨ × ×× (××× ×× ××)':''}`;
+  document.getElementById('pm-price').textContent = 'âª'+p.price;
   document.getElementById('pm-qty').textContent = 1;
   const mv = document.getElementById('pm-variants');
   mv.innerHTML = p.children.length ? p.children.map((c,i) =>
     `<div class="mv ${i===0?'active':''}" id="pvm-${i}" onclick="selectPMV(${i})">
-      <div class="mv-swatch" style="background:${cFor(c.color)}"></div>${c.color} — ₪${c.price}
-    </div>`).join('') : '<div style="font-size:12px;color:var(--muted)">ללא וריאנטים</div>';
+      <div class="mv-swatch" style="background:${cFor(c.color)}"></div>${c.color} â âª${c.price}
+    </div>`).join('') : '<div style="font-size:12px;color:var(--muted)">××× ××¨××× ×××</div>';
   document.getElementById('prod-modal').classList.remove('hidden');
 }
 
@@ -604,11 +605,11 @@ function selectPMV(i) {
   const p = PRODUCTS.find(x=>x.sku===modalSku); if(!p) return;
   modalVi = i;
   const v = p.children[i]; if(!v) return;
-  document.getElementById('pm-price').textContent = '₪'+v.price;
+  document.getElementById('pm-price').textContent = 'âª'+v.price;
   const area = document.getElementById('pm-img-area');
   const ph = document.getElementById('pm-img-ph');
   area.querySelectorAll('img').forEach(el=>el.remove());
-  // *** תיקון: imgLocal קודם, אחר כך imgUrl ***
+  // *** ×ª××§××: imgLocal ×§×××, ×××¨ ×× imgUrl ***
   const imgSrc = getImg(v) || getImg(p);
   if (imgSrc) {
     const img=document.createElement('img'); img.src=imgSrc; img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1';
@@ -651,7 +652,7 @@ function addToCart(sku) {
   addItemToCart(p, v, qty);
   const el = document.getElementById('cq-'+sid); if(el) el.textContent='0';
   const btn = document.querySelector(`#pc-${sid} .btn-primary`);
-  if (btn) { const o=btn.textContent; btn.textContent='✓ נוסף!'; btn.style.background='#0F6E56'; setTimeout(()=>{btn.textContent=o;btn.style.background='';},900); }
+  if (btn) { const o=btn.textContent; btn.textContent='â × ××¡×£!'; btn.style.background='#0F6E56'; setTimeout(()=>{btn.textContent=o;btn.style.background='';},900); }
 }
 
 function addItemToCart(p, v, qty) {
@@ -659,7 +660,7 @@ function addItemToCart(p, v, qty) {
   const price = v ? v.price : p.price;
   const discount = p.allowDiscount ? cartDiscount : 0;
   const discountedPrice = price * (1 - discount/100);
-  // *** תיקון: imgLocal קודם, אחר כך imgUrl ***
+  // *** ×ª××§××: imgLocal ×§×××, ×××¨ ×× imgUrl ***
   cart[key] = {
     qty: (cart[key]?.qty||0) + qty,
     price, discount, discountedPrice,
@@ -669,7 +670,7 @@ function addItemToCart(p, v, qty) {
     cat: p.category, allowDiscount: p.allowDiscount
   };
   updateCartBar();
-  toast('✓ נוסף: ' + (v?.color||p.sku), '#1D9E75');
+  toast('â × ××¡×£: ' + (v?.color||p.sku), '#1D9E75');
 }
 
 function updateCartBar() {
@@ -679,7 +680,7 @@ function updateCartBar() {
   const bar = document.getElementById('cart-bar');
   bar.classList.toggle('show', count>0);
   document.getElementById('cb-count').textContent = count;
-  document.getElementById('cb-total').textContent = '₪'+total.toLocaleString('he-IL', {maximumFractionDigits:0});
+  document.getElementById('cb-total').textContent = 'âª'+total.toLocaleString('he-IL', {maximumFractionDigits:0});
   const nb = document.getElementById('nb-cart');
   if (nb) { nb.textContent=count; nb.style.display=count?'inline-block':'none'; }
   renderOrderItems();
@@ -688,7 +689,7 @@ function updateCartBar() {
 function renderOrderItems() {
   const ol = document.getElementById('order-items-list'); if(!ol) return;
   const items = Object.entries(cart).filter(([,v])=>v.qty>0);
-  if (!items.length) { ol.innerHTML='<div style="text-align:center;padding:2rem;color:var(--muted);font-size:13px">ההזמנה ריקה — הוסף מוצרים מהקטלוג</div>'; updateTotals(); return; }
+  if (!items.length) { ol.innerHTML='<div style="text-align:center;padding:2rem;color:var(--muted);font-size:13px">××××× × ×¨××§× â ×××¡×£ ×××¦×¨×× ×××§××××</div>'; updateTotals(); return; }
   ol.innerHTML = items.map(([k,v]) => `
     <div class="order-item">
       <div class="order-thumb" style="background:${catBg(v.cat)}">
@@ -697,12 +698,12 @@ function renderOrderItems() {
       </div>
       <div style="flex:1">
         <div style="font-size:13px;font-weight:600">${v.name}</div>
-        <div style="font-size:11px;color:var(--muted)">₪${v.price} ${v.allowDiscount&&v.discount>0?`(-${v.discount}%) = ₪${v.discountedPrice.toFixed(2)}`:'(נטו)'}</div>
+        <div style="font-size:11px;color:var(--muted)">âª${v.price} ${v.allowDiscount&&v.discount>0?`(-${v.discount}%) = âª${v.discountedPrice.toFixed(2)}`:'(× ××)'}</div>
       </div>
       <button class="qty-btn" onclick="adjCart('${k}',-1)">-</button>
       <div class="qty-num">${v.qty}</div>
       <button class="qty-btn" onclick="adjCart('${k}',1)">+</button>
-      <div style="font-size:13px;font-weight:700;color:var(--green);width:60px;text-align:left">₪${(v.discountedPrice*v.qty).toFixed(0)}</div>
+      <div style="font-size:13px;font-weight:700;color:var(--green);width:60px;text-align:left">âª${(v.discountedPrice*v.qty).toFixed(0)}</div>
     </div>`).join('');
   updateTotals();
 }
@@ -711,16 +712,16 @@ function updateTotals() {
   const items = Object.values(cart).filter(x=>x.qty>0);
   const sub = items.reduce((s,i)=>s+i.price*i.qty, 0);
   const total = items.reduce((s,i)=>s+i.discountedPrice*i.qty, 0);
-  document.getElementById('ot-subtotal').textContent = '₪'+sub.toLocaleString('he-IL',{maximumFractionDigits:0});
-  document.getElementById('ot-discount').textContent = '- ₪'+(sub-total).toLocaleString('he-IL',{maximumFractionDigits:0});
-  document.getElementById('ot-total').textContent = '₪'+total.toLocaleString('he-IL',{maximumFractionDigits:0});
+  document.getElementById('ot-subtotal').textContent = 'âª'+sub.toLocaleString('he-IL',{maximumFractionDigits:0});
+  document.getElementById('ot-discount').textContent = '- âª'+(sub-total).toLocaleString('he-IL',{maximumFractionDigits:0});
+  document.getElementById('ot-total').textContent = 'âª'+total.toLocaleString('he-IL',{maximumFractionDigits:0});
 }
 
 function adjCart(k,d) { if(!cart[k])return; cart[k].qty=Math.max(0,cart[k].qty+d); if(!cart[k].qty)delete cart[k]; updateCartBar(); }
 
 async function submitOrder() {
   const items = Object.values(cart).filter(x=>x.qty>0);
-  if (!items.length) { toast('ההזמנה ריקה','#DC2626'); return; }
+  if (!items.length) { toast('××××× × ×¨××§×','#DC2626'); return; }
   const sub = items.reduce((s,i)=>s+i.price*i.qty, 0);
   const total = items.reduce((s,i)=>s+i.discountedPrice*i.qty, 0);
   const orderItems = items.map(i => ({ sku:i.sku, name:i.name, color:'', price:i.price, qty:i.qty, discount:i.discount, total:i.discountedPrice*i.qty }));
@@ -729,7 +730,7 @@ async function submitOrder() {
     items: orderItems, subtotal: sub, discountAmount: sub-total, total,
   })});
   if (r?.success) {
-    toast('✅ הזמנה '+r.orderNum+' נשלחה!','#1D9E75');
+    toast('â ×××× × '+r.orderNum+' × ×©×××!','#1D9E75');
     cart = {}; orderCustomer = null; cartDiscount = 0;
     updateCartBar();
     await loadOrders(); renderDashboard();
@@ -741,9 +742,9 @@ async function loadCustomers() {
   if (data) {
     CUSTOMERS = data;
     const sel = document.getElementById('order-customer');
-    if (sel) sel.innerHTML = '<option value="">בחר לקוח...</option>' + data.map(c => `<option value="${c._id}">${c.name}${c.discount?' (הנחה '+c.discount+'%)':''}</option>`).join('');
+    if (sel) sel.innerHTML = '<option value="">×××¨ ××§××...</option>' + data.map(c => `<option value="${c._id}">${c.name}${c.discount?' (×× ×× '+c.discount+'%)':''}</option>`).join('');
     const qsel = document.getElementById('qs-customer');
-    if (qsel) qsel.innerHTML = '<option value="">ללא לקוח</option>' + data.map(c=>`<option value="${c._id}">${c.name}</option>`).join('');
+    if (qsel) qsel.innerHTML = '<option value="">××× ××§××</option>' + data.map(c=>`<option value="${c._id}">${c.name}</option>`).join('');
   }
 }
 
@@ -758,13 +759,13 @@ function renderCustomers() {
         <div class="cust-av" style="background:${colors[i%colors.length]}">${c.name.substring(0,2)}</div>
         <div><div style="font-size:14px;font-weight:600">${c.name}</div><div style="font-size:11px;color:var(--muted)">${c.phone||''}</div></div>
       </div>
-      ${c.discount?`<div style="font-size:11px;background:var(--green-light);color:var(--green-dark);padding:3px 8px;border-radius:6px;display:inline-block;margin-bottom:6px">הנחה קבועה: ${c.discount}%</div>`:''}
+      ${c.discount?`<div style="font-size:11px;background:var(--green-light);color:var(--green-dark);padding:3px 8px;border-radius:6px;display:inline-block;margin-bottom:6px">×× ×× ×§×××¢×: ${c.discount}%</div>`:''}
       <div style="font-size:11px;color:var(--muted)">${c.address||''} ${c.city||''}</div>
       <div style="display:flex;gap:5px;margin-top:8px">
-        <button class="btn btn-sm btn-primary" onclick="startOrderFor('${c._id}')" style="flex:1">+ הזמנה</button>
-        <button class="btn btn-sm" onclick="editCustomer('${c._id}')">✏️</button>
+        <button class="btn btn-sm btn-primary" onclick="startOrderFor('${c._id}')" style="flex:1">+ ×××× ×</button>
+        <button class="btn btn-sm" onclick="editCustomer('${c._id}')">âï¸</button>
       </div>
-    </div>`).join('') || '<div style="color:var(--muted)">אין לקוחות</div>';
+    </div>`).join('') || '<div style="color:var(--muted)">××× ××§××××ª</div>';
 }
 
 function startOrderFor(id) {
@@ -774,19 +775,19 @@ function startOrderFor(id) {
 }
 
 function showAddCustomerModal() {
-  const name = prompt('שם לקוח:'); if(!name) return;
-  const phone = prompt('טלפון:');
-  const discount = prompt('הנחה קבועה % (0 = ללא):') || '0';
+  const name = prompt('×©× ××§××:'); if(!name) return;
+  const phone = prompt('×××¤××:');
+  const discount = prompt('×× ×× ×§×××¢× % (0 = ×××):') || '0';
   api('/api/customers', { method:'POST', body: JSON.stringify({ name, phone:phone||'', discount:parseInt(discount)||0 }) })
-    .then(async r => { if(r?.success) { await loadCustomers(); renderCustomers(); toast('✓ לקוח נוסף','#1D9E75'); } });
+    .then(async r => { if(r?.success) { await loadCustomers(); renderCustomers(); toast('â ××§×× × ××¡×£','#1D9E75'); } });
 }
 
 function editCustomer(id) {
   const c = CUSTOMERS.find(x=>x._id===id); if(!c) return;
-  const discount = prompt('הנחה קבועה %:', c.discount||0);
+  const discount = prompt('×× ×× ×§×××¢× %:', c.discount||0);
   if (discount === null) return;
   api(`/api/customers/${id}`, { method:'PUT', body: JSON.stringify({ discount: parseInt(discount)||0 }) })
-    .then(async () => { await loadCustomers(); renderCustomers(); toast('✓ עודכן','#1D9E75'); });
+    .then(async () => { await loadCustomers(); renderCustomers(); toast('â ×¢××××','#1D9E75'); });
 }
 
 async function loadOrders() {
@@ -799,24 +800,24 @@ async function loadOrderHistory() {
   const url = '/api/orders' + (status?'?status='+status:'');
   const data = await api(url);
   const container = document.getElementById('order-history-list'); if(!container) return;
-  if (!data?.length) { container.innerHTML='<div style="color:var(--muted);text-align:center;padding:2rem">אין הזמנות</div>'; return; }
+  if (!data?.length) { container.innerHTML='<div style="color:var(--muted);text-align:center;padding:2rem">××× ×××× ××ª</div>'; return; }
   container.innerHTML = data.map(o => `
     <div class="card" style="margin-bottom:8px;cursor:pointer" onclick="toggleOrderDetail('${o._id}')">
       <div style="display:flex;justify-content:space-between;align-items:center">
         <div>
           <div style="font-size:13px;font-weight:600">${o.orderNum}</div>
-          <div style="font-size:11px;color:var(--muted)">${o.customerName||'ללא לקוח'} · ${o.agentName||''} · ${new Date(o.createdAt).toLocaleDateString('he-IL')}</div>
+          <div style="font-size:11px;color:var(--muted)">${o.customerName||'××× ××§××'} Â· ${o.agentName||''} Â· ${new Date(o.createdAt).toLocaleDateString('he-IL')}</div>
         </div>
         <div style="text-align:left">
-          <div style="font-size:15px;font-weight:700;color:var(--green)">₪${o.total?.toLocaleString()}</div>
-          <span class="status-badge s-${o.status}">${{pending:'ממתין',confirmed:'אושר',new:'חדש',cancelled:'בוטל'}[o.status]||o.status}</span>
+          <div style="font-size:15px;font-weight:700;color:var(--green)">âª${o.total?.toLocaleString()}</div>
+          <span class="status-badge s-${o.status}">${{pending:'×××ª××',confirmed:'×××©×¨',new:'×××©',cancelled:'××××'}[o.status]||o.status}</span>
         </div>
       </div>
       <div id="od-${o._id}" style="display:none;margin-top:10px;border-top:1px solid var(--border);padding-top:10px">
-        ${(o.items||[]).map(i=>`<div style="display:flex;justify-content:space-between;font-size:12px;padding:3px 0"><span>${i.name}</span><span>${i.qty} × ₪${i.price} = ₪${i.total?.toFixed(0)}</span></div>`).join('')}
+        ${(o.items||[]).map(i=>`<div style="display:flex;justify-content:space-between;font-size:12px;padding:3px 0"><span>${i.name}</span><span>${i.qty} Ã âª${i.price} = âª${i.total?.toFixed(0)}</span></div>`).join('')}
         <div style="display:flex;gap:6px;margin-top:8px">
-          <button class="btn btn-sm btn-whatsapp" onclick="sendOrderWhatsapp('${o._id}')">💬 WhatsApp</button>
-          ${USER?.role==='admin'?`<button class="btn btn-sm" onclick="updateOrderStatus('${o._id}','confirmed')">✅ אשר</button><button class="btn btn-sm btn-danger" onclick="updateOrderStatus('${o._id}','cancelled')">❌ בטל</button>`:''}
+          <button class="btn btn-sm btn-whatsapp" onclick="sendOrderWhatsapp('${o._id}')">ð¬ WhatsApp</button>
+          ${USER?.role==='admin'?`<button class="btn btn-sm" onclick="updateOrderStatus('${o._id}','confirmed')">â ××©×¨</button><button class="btn btn-sm btn-danger" onclick="updateOrderStatus('${o._id}','cancelled')">â ×××</button>`:''}
         </div>
       </div>
     </div>`).join('');
@@ -829,15 +830,15 @@ function toggleOrderDetail(id) {
 
 async function updateOrderStatus(id, status) {
   const r = await api(`/api/orders/${id}/status`, { method:'PUT', body: JSON.stringify({ status }) });
-  if (r?.success) { await loadOrderHistory(); toast('✓ סטטוס עודכן','#1D9E75'); }
+  if (r?.success) { await loadOrderHistory(); toast('â ×¡××××¡ ×¢××××','#1D9E75'); }
 }
 
 function sendOrderWhatsapp(orderId) {
   const o = ORDERS.find(x=>x._id===orderId); if(!o) return;
-  const text = `הזמנה מספר ${o.orderNum}\n${(o.items||[]).map(i=>`${i.name} × ${i.qty}`).join('\n')}\nסה"כ: ₪${o.total?.toLocaleString()}`;
+  const text = `×××× × ××¡×¤×¨ ${o.orderNum}\n${(o.items||[]).map(i=>`${i.name} Ã ${i.qty}`).join('\n')}\n×¡×"×: âª${o.total?.toLocaleString()}`;
   const phone = o.customerPhone?.replace(/[^0-9]/g,'');
   if (phone) window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`,'_blank');
-  else toast('אין מספר טלפון ללקוח','#DC2626');
+  else toast('××× ××¡×¤×¨ ×××¤×× ×××§××','#DC2626');
 }
 
 function openQuicksellModal() {
@@ -845,7 +846,7 @@ function openQuicksellModal() {
   catDiv.innerHTML = CATEGORIES.map(c => `
     <label class="cat-checkbox"><input type="checkbox" value="${c}" name="qs-cat"><span>${catIcon(c)} ${c}</span></label>`).join('');
   const qsel = document.getElementById('qs-customer');
-  qsel.innerHTML = '<option value="">ללא לקוח</option>' + CUSTOMERS.map(c=>`<option value="${c._id}">${c.name}</option>`).join('');
+  qsel.innerHTML = '<option value="">××× ××§××</option>' + CUSTOMERS.map(c=>`<option value="${c._id}">${c.name}</option>`).join('');
   document.getElementById('qs-modal').classList.remove('hidden');
 }
 
@@ -856,10 +857,10 @@ async function createQuicksellLink() {
   if (r?.link) {
     document.getElementById('qs-link-result').innerHTML = `
       <div style="background:#F3F4F6;border-radius:8px;padding:8px;margin-top:8px">
-        <div style="font-weight:600;margin-bottom:4px">קישור ללקוח:</div>
-        <div style="word-break:break-all;color:#2563EB;cursor:pointer" onclick="navigator.clipboard.writeText('${r.link}');toast('✓ הועתק','#1D9E75')">${r.link}</div>
+        <div style="font-weight:600;margin-bottom:4px">×§××©××¨ ×××§××:</div>
+        <div style="word-break:break-all;color:#2563EB;cursor:pointer" onclick="navigator.clipboard.writeText('${r.link}');toast('â ×××¢×ª×§','#1D9E75')">${r.link}</div>
       </div>`;
-    toast('✓ קישור נוצר — לחץ להעתקה','#1D9E75');
+    toast('â ×§××©××¨ × ××¦×¨ â ×××¥ ×××¢×ª×§×','#1D9E75');
   }
 }
 
@@ -870,23 +871,23 @@ async function sendQuicksellWhatsapp() {
   if (r?.link) {
     const customer = CUSTOMERS.find(c=>c._id===customerId);
     const phone = customer?.phone?.replace(/[^0-9]/g,'');
-    const text = `שלום ${customer?.name||''}!\nהנה קישור לקטלוג שלנו להזמנה מקוונת:\n${r.link}`;
+    const text = `×©××× ${customer?.name||''}!\n×× × ×§××©××¨ ××§×××× ×©×× × ××××× × ××§××× ×ª:\n${r.link}`;
     if (phone) window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`,'_blank');
-    else { navigator.clipboard.writeText(r.link); toast('✓ קישור הועתק (אין מספר טלפון)','#1D9E75'); }
+    else { navigator.clipboard.writeText(r.link); toast('â ×§××©××¨ ×××¢×ª×§ (××× ××¡×¤×¨ ×××¤××)','#1D9E75'); }
   }
 }
 
 function openBarcodeScanner() {
   const input = document.getElementById('cat-search');
-  if (input) { showPage('catalog'); input.focus(); toast('הזן ברקוד או סרוק עם קורא ברקוד חיצוני','#374151'); }
+  if (input) { showPage('catalog'); input.focus(); toast('××× ××¨×§×× ×× ×¡×¨××§ ×¢× ×§××¨× ××¨×§×× ×××¦×× ×','#374151'); }
 }
 
 let returns = {};
 function openReturnModal() {
-  const sku = prompt('הזן SKU או ברקוד:'); if(!sku) return;
-  const qty = parseInt(prompt('כמות להחזרה:') || '1');
+  const sku = prompt('××× SKU ×× ××¨×§××:'); if(!sku) return;
+  const qty = parseInt(prompt('××××ª ×××××¨×:') || '1');
   const p = PRODUCTS.find(x=>x.sku===sku||x.barcode===sku);
-  if (!p) { toast('מוצר לא נמצא','#DC2626'); return; }
+  if (!p) { toast('×××¦×¨ ×× × ××¦×','#DC2626'); return; }
   returns[sku] = { qty, name:p.name+' '+p.sku, price:p.price };
   renderReturns();
 }
@@ -896,32 +897,42 @@ function renderReturns() {
   el.innerHTML = Object.entries(returns).map(([k,v])=>`
     <div style="display:flex;align-items:center;gap:8px;padding:6px;background:#FEF2F2;border-radius:8px;margin-bottom:4px">
       <span style="flex:1;font-size:12px">${v.name}</span>
-      <span style="font-size:12px;color:var(--danger)">× ${v.qty}</span>
-      <button class="btn btn-sm btn-danger" onclick="delete returns['${k}'];renderReturns()">✕</button>
+      <span style="font-size:12px;color:var(--danger)">Ã ${v.qty}</span>
+      <button class="btn btn-sm btn-danger" onclick="delete returns['${k}'];renderReturns()">â</button>
     </div>`).join('');
 }
 
+async function downloadLastExcel() {
+  const token = localStorage.getItem('fp_token');
+  const res = await fetch('/api/import/excel/last', { headers: { Authorization: 'Bearer ' + token } });
+  if (!res.ok) { toast('לא נמצא קובץ ייבוא קודם', '#e53e3e'); return; }
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'last_import.xlsx'; a.click();
+  URL.revokeObjectURL(url);
+}
 async function importExcel(input) {
   const file = input.files[0]; if(!file) return;
   const fd = new FormData(); fd.append('file', file);
   const res = document.getElementById('import-result');
-  res.style.display='block'; res.textContent='⏳ מייבא...'; res.style.color='var(--muted)';
+  res.style.display='block'; res.textContent='â³ ×××××...'; res.style.color='var(--muted)';
   const r = await apiForm('/api/import/excel', fd);
   if (r?.success) {
-    res.textContent=`✅ ${r.added} חדשים, ${r.updated} עודכנו, סה"כ ${r.total} מוצרים`;
+    res.textContent=`â ${r.added} ×××©××, ${r.updated} ×¢×××× ×, ×¡×"× ${r.total} ×××¦×¨××`;
     res.style.color='var(--green)';
     await loadProducts(); buildCatFilters(); renderCatalog(); renderDashboard();
-  } else { res.textContent='❌ שגיאה: '+(r?.error||''); res.style.color='var(--danger)'; }
+  } else { res.textContent='â ×©××××: '+(r?.error||''); res.style.color='var(--danger)'; }
   input.value='';
 }
 
 async function bulkUpload(input) {
   const files = Array.from(input.files); if(!files.length) return;
-  toast('⏳ מעלה '+files.length+' תמונות...','#374151');
+  toast('â³ ××¢×× '+files.length+' ×ª××× ××ª...','#374151');
   const fd = new FormData(); files.forEach(f=>fd.append('images',f));
   const r = await apiForm('/api/images/bulk', fd);
   if (r) {
-    toast(`✅ ${r.matched?.length||0} שויכו${r.unmatched?.length?' · '+r.unmatched.length+' ללא שיוך':''}`, '#1D9E75');
+    toast(`â ${r.matched?.length||0} ×©××××${r.unmatched?.length?' Â· '+r.unmatched.length+' ××× ×©×××':''}`, '#1D9E75');
     await loadProducts(); renderCatalog();
   }
   input.value='';
@@ -934,7 +945,7 @@ async function renderDashboard() {
       document.getElementById('s-products').textContent = stats.products;
       document.getElementById('s-orders').textContent = stats.orders;
       document.getElementById('s-customers').textContent = stats.customers;
-      document.getElementById('s-revenue').textContent = '₪'+Math.round(stats.revenue).toLocaleString('he-IL');
+      document.getElementById('s-revenue').textContent = 'âª'+Math.round(stats.revenue).toLocaleString('he-IL');
     }
   } else {
     document.getElementById('s-products').textContent = PRODUCTS.length;
@@ -946,24 +957,24 @@ async function renderDashboard() {
   if (el) {
     el.innerHTML = (ORDERS||[]).slice(0,5).map(o=>
       `<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);font-size:12px">
-        <span>${o.orderNum} — ${o.customerName||'ללא לקוח'}</span>
-        <span style="color:var(--green);font-weight:600">₪${o.total?.toLocaleString()}</span>
-      </div>`).join('') || '<div style="color:var(--muted)">אין הזמנות עדיין</div>';
+        <span>${o.orderNum} â ${o.customerName||'××× ××§××'}</span>
+        <span style="color:var(--green);font-weight:600">âª${o.total?.toLocaleString()}</span>
+      </div>`).join('') || '<div style="color:var(--muted)">××× ×××× ××ª ×¢××××</div>';
   }
 }
 
 async function loadReports() {
   const el = document.getElementById('reports-content');
-  el.innerHTML = '<div style="color:var(--muted)">⏳ טוען נתונים...</div>';
+  el.innerHTML = '<div style="color:var(--muted)">â³ ×××¢× × ×ª×× ××...</div>';
   const data = await api('/api/stats/bestsellers');
-  if (!data?.length) { el.innerHTML='<div style="color:var(--muted)">אין נתוני מכירות עדיין</div>'; return; }
+  if (!data?.length) { el.innerHTML='<div style="color:var(--muted)">××× × ×ª×× × ××××¨××ª ×¢××××</div>'; return; }
   const top = data.slice(0,20);
   el.innerHTML = `
     <div class="card" style="margin-bottom:1rem">
-      <div style="font-size:13px;font-weight:600;margin-bottom:10px">🏆 מוצרים נמכרים ביותר</div>
+      <div style="font-size:13px;font-weight:600;margin-bottom:10px">ð ×××¦×¨×× × ×××¨×× ××××ª×¨</div>
       <table class="data-table">
-        <thead><tr><th>#</th><th>מוצר</th><th>צבע</th><th>כמות</th><th>מחזור</th></tr></thead>
-        <tbody>${top.map((p,i)=>`<tr><td>${i+1}</td><td>${p._id.name||p._id.sku}</td><td>${p._id.color||'-'}</td><td style="font-weight:600;color:var(--green)">${p.totalQty}</td><td>₪${Math.round(p.totalRevenue).toLocaleString()}</td></tr>`).join('')}</tbody>
+        <thead><tr><th>#</th><th>×××¦×¨</th><th>×¦××¢</th><th>××××ª</th><th>×××××¨</th></tr></thead>
+        <tbody>${top.map((p,i)=>`<tr><td>${i+1}</td><td>${p._id.name||p._id.sku}</td><td>${p._id.color||'-'}</td><td style="font-weight:600;color:var(--green)">${p.totalQty}</td><td>âª${Math.round(p.totalRevenue).toLocaleString()}</td></tr>`).join('')}</tbody>
       </table>
     </div>`;
 }
@@ -973,7 +984,7 @@ async function saveSettings() {
   const email = document.getElementById('set-email').value;
   const whatsapp = document.getElementById('set-whatsapp').value;
   await api('/api/settings', { method:'POST', body: JSON.stringify({ company, email, whatsapp }) });
-  toast('✓ הגדרות נשמרו','#1D9E75');
+  toast('â ××××¨××ª × ×©××¨×','#1D9E75');
 }
 
 function showPage(id, el) {
@@ -992,13 +1003,13 @@ function showPage(id, el) {
 function populateOrderCustomer() {
   const sel = document.getElementById('order-customer');
   if (!sel || sel.options.length > 1) return;
-  sel.innerHTML = '<option value="">בחר לקוח...</option>' + CUSTOMERS.map(c=>`<option value="${c._id}">${c.name}</option>`).join('');
+  sel.innerHTML = '<option value="">×××¨ ××§××...</option>' + CUSTOMERS.map(c=>`<option value="${c._id}">${c.name}</option>`).join('');
 }
 
 function renderImageGrid() {
   const grid = document.getElementById('img-grid'); if(!grid) return;
   const withImg = PRODUCTS.filter(p=>getImg(p)).length;
-  document.getElementById('img-count').textContent = `${withImg} מתוך ${PRODUCTS.length} מוצרים`;
+  document.getElementById('img-count').textContent = `${withImg} ××ª×× ${PRODUCTS.length} ×××¦×¨××`;
   grid.innerHTML = PRODUCTS.map(p => {
     const sid = p.sku.replace(/[^a-zA-Z0-9]/g,'_');
     const imgSrc = getImg(p);
@@ -1009,7 +1020,7 @@ function renderImageGrid() {
       </div>
       <div class="prod-info">
         <div class="prod-name">${p.sku}</div>
-        <div class="prod-sku-label" style="color:${imgSrc?'var(--green)':'var(--muted)'}">${imgSrc?'✓ יש תמונה':'לחץ להעלאה'}</div>
+        <div class="prod-sku-label" style="color:${imgSrc?'var(--green)':'var(--muted)'}">${imgSrc?'â ××© ×ª××× ×':'×××¥ ×××¢×××'}</div>
       </div>
     </div>`;
   }).join('');
